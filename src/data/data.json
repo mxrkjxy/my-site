@@ -1,0 +1,183 @@
+{
+  "header": {
+    "name": {
+      "firstName": "Mark Jay",
+      "middleName": "Villablanca",
+      "lastName": "Cada"
+    },
+    "role": "Software Engineer, Front-end",
+    "contact": {
+      "email": "mjvcada@gmail.com",
+      "mobile": "+63 969 562 5826",
+      "telephone": "+63 7343 7327",
+      "location": "Mandaluyong, Philippines",
+      "github": "https://github.com/mxrkjxy",
+      "linkedIn": "https://www.linkedin.com/in/markjaycada"
+    }
+  },
+  "body": {
+    "summary": {
+      "descriptions": [
+        "A highly motivated and skilled software engineer with a strong background in web development.",
+        "Proficient in React, Node.js, and other modern web technologies.",
+        "Passionate about building user-friendly applications and continuously learning new skills."
+      ]
+    },
+    "education": {
+      "universities": [
+        {
+          "name": "Polytechnic University of the Philippines - Sta. Mesa",
+          "degree": "Bachelor of Science in Computer Engineering",
+          "yearStarted": 2015,
+          "yearGraduated": 2020,
+          "location": "Manila, Philippines",
+          "awards": ["DOST-SEI Scholar (2018 - 2020)"]
+        }
+      ]
+    },
+    "certifications": [
+      {
+        "name": "",
+        "year": "",
+        "location": "",
+        "description": []
+      }
+    ],
+    "workExperience": {
+      "companies": [
+        {
+          "name": "Infor PSSC, Inc.",
+          "location": "Bonifacio Global City, Taguig, Philippines",
+          "role": "Software Engineer",
+          "startDate": {
+            "month": "April",
+            "year": 2022
+          },
+          "endDate": {
+            "month": "",
+            "year": ""
+          },
+          "description": [
+            "Developed and maintained web applications using React and Node.js.",
+            "Collaborated with cross-functional teams to design and implement new features.",
+            "Participated in code reviews and provided feedback to team members.",
+            "Assigned to more heavy features which includes facing the consultants"
+          ],
+          "awards": ["Rhythm Rockstar (January 2024)"]
+        },
+        {
+          "name": "Infor PSSC, Inc.",
+          "location": "Bonifacio Global City, Taguig, Philippines",
+          "role": "Software Engineer, Associate",
+          "startDate": {
+            "month": "January",
+            "year": 2021
+          },
+          "endDate": {
+            "month": "March",
+            "year": 2022
+          },
+          "description": [
+            "Developed and maintained web applications using React and Node.js.",
+            "Collaborated with cross-functional teams to design and implement new features.",
+            "Participated in code reviews and provided feedback to team members.",
+            "Handled frontend-related maintenance tickets of a cloud-based e-commerce product, both in web and mobile",
+            "Dealt with investigation, replication, fixing, and testing reported issues in production.",
+            "Involved in planning of features to be developed, including estimation and execution.",
+            "Delivered feature developments based on customer’s requirements as well as enhancements, redesigning, code refactoring, optimizing performance, and utilizing RESTful APIs.",
+            "Took part in peer code review before merging trivial and crucial changes to the repository.",
+            "Deployed fixes to specific environments.",
+            "Participated in sprint review presentations which showcases the current status of a feature that is still under development."
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "technologies": [
+        {
+          "languages": [
+            "JavaScript",
+            "HTML5",
+            "CSS",
+            "SCSS",
+            "Sass",
+            "JSON",
+            "Python"
+          ]
+        },
+        {
+          "libraries": [
+            "React",
+            "Redux",
+            "Redux Toolkit",
+            "Axios",
+            "Backbone.js",
+            "jQuery",
+            "Handlebars.js",
+            "Underscore.js",
+            "Lodash",
+            "Moment.js",
+            "Jest"
+          ]
+        },
+        {
+          "frameworks": [
+            "Marionette.js",
+            "Bootstrap",
+            "Tailwind CSS",
+            "Angular",
+            "Express.js"
+          ]
+        },
+        {
+          "tools": [
+            "VS Code",
+            "Node.js",
+            "Git",
+            "Bash",
+            "GitHub",
+            "GitLab",
+            "Jenkins",
+            "Swagger",
+            "Jira",
+            "Postman",
+            "Liferay",
+            "Browserstack"
+          ]
+        },
+        {
+          "others": ["REST APIs", "Agile", "Scrum", "DevOps", "CI/CD"]
+        }
+      ],
+      "softSkills": [
+        "Problem-solving",
+        "Critical thinking",
+        "Teamwork",
+        "Collaboration",
+        "Communication",
+        "Adaptability",
+        "Time management",
+        "Attention to detail",
+        "Creativity"
+      ],
+      "languages": [
+        {
+          "name": "English",
+          "level": "Fluent"
+        },
+        {
+          "name": "Filipino",
+          "level": "Native"
+        }
+      ]
+    },
+    "projects": [
+      {
+        "name": "",
+        "description": "",
+        "technologies": [],
+        "link": ""
+      }
+    ]
+  }
+}
