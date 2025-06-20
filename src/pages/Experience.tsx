@@ -1,9 +1,5 @@
-const ExperiencePage = () => {
-  return (
-    <section>
-      <h1> Experience page </h1>
-    </section>
-  );
+const ExperiencePage: React.FC = () => {
+  return <h1> My Experience... </h1>;
 };
 
 export default ExperiencePage;

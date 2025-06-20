@@ -1,9 +1,5 @@
-const ProjectsPage = () => {
-  return (
-    <section>
-      <h1> Projects page </h1>
-    </section>
-  );
+const ProjectsPage: React.FC = () => {
+  return <h1> My Projects... </h1>;
 };
 
 export default ProjectsPage;

@@ -1,9 +1,5 @@
-const AboutPage = () => {
-  return (
-    <section>
-      <h1> About page </h1>
-    </section>
-  );
+const AboutPage: React.FC = () => {
+  return <h1> About me </h1>;
 };
 
 export default AboutPage;

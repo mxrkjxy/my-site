@@ -1,9 +1,5 @@
-const HomePage = () => {
-  return (
-    <section>
-      <h1> Home page </h1>
-    </section>
-  );
+const HomePage: React.FC = () => {
+  return <h1> Hello there! </h1>;
 };
 
 export default HomePage;

@@ -1,32 +1,15 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-// import '@/App.css';
+import Navbar from '@/components/Navbar';
+import MainBody from '@/components/MainBody';
+import Footer from '@/components/Footer';
 
-import RootLayout from './pages/Root';
-import HomePage from '@/pages/Home';
-import AboutPage from '@/pages/About';
-import ExperiencePage from '@/pages/Experience';
-import ProjectsPage from './pages/Projects';
-import ContactPage from './pages/Contact';
-import ErrorPage from '@/pages/Error';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: 'about', element: <AboutPage /> },
-      { path: 'experience', element: <ExperiencePage /> },
-      { path: 'projects', element: <ProjectsPage /> },
-      { path: 'contact', element: <ContactPage /> },
-    ],
-  },
-]);
-
-const App = () => {
-  return <RouterProvider router={router} />;
-};
+function App() {
+  return (
+    <div className="flex flex-col min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white">
+      <Navbar />
+      <MainBody />
+      <Footer />
+    </div>
+  );
+}
 
 export default App;
