@@ -13,7 +13,7 @@ const Content = ({ title, content }) => {
 
   return (
     <section className={camelToKebabCase(title)}>
-      <h1>{camelToProperCase(title)}</h1>
+      <h1 className="text-3xl font-bold">{camelToProperCase(title)}</h1>
 
       {title === "summary" && content.descriptions && (
         <p className="description">{content.descriptions.join(' ')}</p>
@@ -71,24 +71,22 @@ const Content = ({ title, content }) => {
       )}
 
       {title === "skills" && (
-        <ul className="skills-list">
+        <ul className="list-disc pl-5 skills-list">
           {content.technologies && (
             <li className="technologies-section">
               <h3 className="technologies">Technologies</h3>
-              <ul className="technology-list">
+              <ul className="list-disc pl-6 technology-list">
                 {content.technologies.map((techGroup, index) => (
                   <React.Fragment key={index}>
                     {Object.entries(techGroup).map(([category, items]) => (
-                      <React.Fragment key={category}>
-                        <li className={camelToKebabCase(category)}>
-                          <h4>{camelToProperCase(category)}</h4>
-                          <ul className={`technology-list-${category}`}>
-                            {items.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </li>
-                      </React.Fragment>
+                      <li className={camelToKebabCase(category)} key={category}>
+                        <h4>{camelToProperCase(category)}</h4>
+                        <ul className={`list-disc pl-7 technology-list-${category}`}>
+                          {items.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </li>
                     ))}
                   </React.Fragment>
                 ))}
@@ -99,7 +97,7 @@ const Content = ({ title, content }) => {
           {content.softSkills && (
             <li className="soft-skills-section">
               <h3 className="soft-skills">Soft Skills</h3>
-              <ul className="soft-skills-list">
+              <ul className="list-disc pl-6 soft-skills-list">
                 {content.softSkills.map((skill, index) => (
                   <li key={index} className="soft-skill">
                     {skill}

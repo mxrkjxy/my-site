@@ -5,7 +5,7 @@ const Header = ({ content }) => {
 
   return (
     <header className="personal-info">
-      <h1 className="name">{`${name.firstName} ${name.lastName}`}</h1>
+      <h1 className="name text-3xl font-bold">{`${name.firstName} ${name.lastName}`}</h1>
       <p className="role">{role}</p>
       <div className="contact-info">
         <p className="email">Email: {contact.email}</p>

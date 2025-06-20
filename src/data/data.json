@@ -18,9 +18,7 @@
   "body": {
     "summary": {
       "descriptions": [
-        "A highly motivated and skilled software engineer with a strong background in web development.",
-        "Proficient in React, Node.js, and other modern web technologies.",
-        "Passionate about building user-friendly applications and continuously learning new skills."
+        "Results-driven software engineer with over 4 years of experience in front-end web development, specializing in e-commerce solutions. Eager to contribute to a dynamic team where I can continue to grow professionally, enhance my technical expertise, and support the organization in achieving its business objectives through the application of both proven experience and continuous learning."
       ]
     },
     "education": {
@@ -58,10 +56,11 @@
             "year": ""
           },
           "description": [
-            "Developed and maintained web applications using React and Node.js.",
-            "Collaborated with cross-functional teams to design and implement new features.",
-            "Participated in code reviews and provided feedback to team members.",
-            "Assigned to more heavy features which includes facing the consultants"
+            "Contributed to the migration of the legacy codebase from Backbone.js and Marionette.js to modern React with Redux. Developed new reusable React components based on modern design patterns, helping streamline UI development for future features.",
+            "Refactored legacy utility functions and shared modules to align with modern JavaScript best practices, resulting in improved code readability, easier debugging, and better long-term scalability.",
+            "Proactively handled CI/CD issues, such as debugging pipeline failures. Participated in the deployment process in hotfix environments, taking ownership of high-priority maintenance tasks and ensuring critical fixes reached production with minimal downtime.",
+            "Acted as a technical resource for peers, offering consultation and guidance on complex issues across the frontend stack, contributing to team problem-solving and knowledge sharing.",
+            "Collaborated in the design and development of a new feature integrating Generative AI (GenAI) capabilities, contributing from early planning through implementation. Worked closely with product managers, designers, and backend teams to ensure a smooth and cohesive user experience."
           ],
           "awards": ["Rhythm Rockstar (January 2024)"]
         },
@@ -78,16 +77,16 @@
             "year": 2022
           },
           "description": [
-            "Developed and maintained web applications using React and Node.js.",
-            "Collaborated with cross-functional teams to design and implement new features.",
-            "Participated in code reviews and provided feedback to team members.",
-            "Handled frontend-related maintenance tickets of a cloud-based e-commerce product, both in web and mobile",
-            "Dealt with investigation, replication, fixing, and testing reported issues in production.",
-            "Involved in planning of features to be developed, including estimation and execution.",
-            "Delivered feature developments based on customer’s requirements as well as enhancements, redesigning, code refactoring, optimizing performance, and utilizing RESTful APIs.",
-            "Took part in peer code review before merging trivial and crucial changes to the repository.",
-            "Deployed fixes to specific environments.",
-            "Participated in sprint review presentations which showcases the current status of a feature that is still under development."
+            "Took ownership of front-end maintenance tasks for both web and mobile platforms by efficiently addressing and resolving tickets related to UI bugs, visual inconsistencies, responsiveness issues, and browser or device compatibility—ensuring a seamless and consistent user experience across various environments.",
+            "Actively participated in diagnosing and resolving production issues, often collaborating with cross-functional teams to investigate root causes and deliver timely, stable fixes.",
+            "Provided urgent hotfixes for critical issues reported in live environments, minimizing downtime and ensuring business continuity.",
+            "Successfully delivered several front-end feature enhancements, applying the principles of the Software Development Life Cycle (SDLC), from planning and requirement analysis to development, testing, and deployment.",
+            "Collaborated closely with QA engineers, back-end developers, UX designers, and business analysts to ensure feature completeness, functional accuracy, and seamless user experiences—resulting in the successful and timely delivery of key product features.",
+            "Provided tailored solutions to customer-specific theming issues, ensuring branding consistency and satisfaction across various clients with unique UI and styling needs.",
+            "Took responsibility for bumping application version numbers during code lock phases, supporting the release process and ensuring consistency across environments.",
+            "Developed and presented Proof of Concept (PoC) implementations to internal stakeholders, helping validate design assumptions and facilitating informed decision-making for future development.",
+            "Regularly presented accomplishments, progress, and upcoming plans during Sprint Review meetings, contributing to team transparency and stakeholder engagement.",
+            "Participated in code reviews with peers, promoting a collaborative environment focused on continuous improvement and the adoption of best practices, clean code, and maintainable architecture. "
           ]
         }
       ]
