@@ -6,12 +6,12 @@ const App: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white">
       <Navbar />
-      <div className="snap-y snap-mandatory overflow-y-auto h-[calc(100vh-theme(height.24))]">
+      <div id="scroll-container" className="snap-y snap-mandatory overflow-y-auto h-[calc(100vh-theme(height.24))]">
         <MainBody />
         <Footer />
       </div>
     </div>
   );
-}
+};
 
 export default App;
