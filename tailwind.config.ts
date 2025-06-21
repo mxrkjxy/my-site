@@ -1,9 +1,9 @@
-import { type Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 import { shadcnPreset } from '@shadcn/ui';
 
 const config: Config = {
   darkMode: 'class',
-  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   presets: [shadcnPreset],
   theme: {
     extend: {},

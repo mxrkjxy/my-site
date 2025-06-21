@@ -5,11 +5,11 @@ import ProjectsPage from '@/pages/Projects';
 import ContactPage from '@/pages/Contact';
 
 const sections = [
-  { id: 'home', label: 'Home', element: <HomePage /> },
-  { id: 'about', label: 'About', element: <AboutPage /> },
-  { id: 'experience', label: 'Experience', element: <ExperiencePage /> },
-  { id: 'projects', label: 'Projects', element: <ProjectsPage/> },
-  { id: 'contact', label: 'Contact', element: <ContactPage /> },
+  { id: 'home', element: <HomePage /> },
+  { id: 'about', element: <AboutPage /> },
+  { id: 'experience', element: <ExperiencePage /> },
+  { id: 'projects', element: <ProjectsPage/> },
+  { id: 'contact', element: <ContactPage /> },
 ];
 
 export default sections;

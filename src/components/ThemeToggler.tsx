@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes';
 
 import { Button } from '@/components/ui/button';
 
-const ThemeToggle: React.FC = () => {
+const ThemeToggler: React.FC = () => {
   const { theme, setTheme } = useTheme();
   
   return (
@@ -21,4 +21,4 @@ const ThemeToggle: React.FC = () => {
   );
 };
 
-export default ThemeToggle;
+export default ThemeToggler;

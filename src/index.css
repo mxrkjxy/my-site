@@ -41,20 +41,11 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  font-family: 'Roboto Mono', 'Fira Code', 'Source Code Pro', monospace;
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Roboto Mono', 'Fira Code', 'Source Code Pro', monospace;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
-}
-
-body {
-  @apply bg-white text-black dark:bg-gray-900 dark:text-white;
 }
 
 @theme inline {
@@ -136,4 +127,33 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  @apply bg-white text-black dark:bg-gray-900 dark:text-white;
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Custom blinking cursor */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
 }
