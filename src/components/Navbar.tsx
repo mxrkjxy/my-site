@@ -11,164 +11,53 @@ const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>(sections[0].id);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Refs for skip detection
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
-  const lastScrollTimeRef = useRef<number>(0);
-  const scrollVelocityRef = useRef<number>(0);
-  const lastScrollPositionRef = useRef<number>(0);
   const isNavigatingRef = useRef<boolean>(false); // Track navbar navigation
 
   const scrollToSection = (sectionId: string) => {
-    // Set active section instantly when clicked from navbar
-    setActiveSection(sectionId);
-
-    // Mark that we're navigating via navbar
     isNavigatingRef.current = true;
-
-    // Update the URL hash
+    setActiveSection(sectionId);
     window.history.pushState(null, '', `#${sectionId}`);
 
-    const scrollContainer = document.getElementById(
-      'scroll-container'
-    ) as HTMLElement;
-    const targetSection = document.getElementById(sectionId);
+    const section = document.getElementById(sectionId);
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    if (scrollContainer && targetSection) {
-      const containerRect = scrollContainer.getBoundingClientRect();
-      const sectionRect = targetSection.getBoundingClientRect();
-
-      // Calculate the target scroll position
-      const targetScrollTop =
-        sectionRect.top - containerRect.top + scrollContainer.scrollTop;
-
-      // Smooth scroll to the target position
-      scrollContainer.scrollTo({
-        top: targetScrollTop,
-        behavior: 'smooth',
-      });
-
-      // Reset navigation flag after scroll completes
-      setTimeout(() => {
-        isNavigatingRef.current = false;
-      }, 1000); // Adjust based on your scroll animation duration
-    }
+    setTimeout(() => {
+      isNavigatingRef.current = false;
+    }, 800); // Adjust based on transition
   };
 
   useEffect(() => {
-    // Handle initial hash on page load
-    const handleHashChange = () => {
-      const hash = window.location.hash.substring(1);
-      if (hash && sections.find((s) => s.id === hash)) {
-        setActiveSection(hash);
-        // Small delay to ensure DOM is ready
-        setTimeout(() => scrollToSection(hash), 100);
-      }
-    };
+    const scrollContainer = document.getElementById('scroll-container');
+    if (!scrollContainer) return;
 
-    // Check for hash on component mount
-    handleHashChange();
-
-    // Listen for hash changes (browser back/forward)
-    window.addEventListener('hashchange', handleHashChange);
-
-    const handleScroll = () => {
-      // Skip scroll detection if we're currently navigating via navbar
-      if (isNavigatingRef.current) {
-        return;
-      }
-
-      const now = Date.now();
-      const scrollContainer = document.getElementById('scroll-container');
-      if (!scrollContainer) return;
-
-      const currentScrollPosition = scrollContainer.scrollTop;
-
-      // Calculate scroll velocity
-      if (lastScrollTimeRef.current > 0) {
-        const timeDelta = now - lastScrollTimeRef.current;
-        const positionDelta = Math.abs(
-          currentScrollPosition - lastScrollPositionRef.current
-        );
-        scrollVelocityRef.current = positionDelta / timeDelta;
-      }
-
-      lastScrollTimeRef.current = now;
-      lastScrollPositionRef.current = currentScrollPosition;
-
-      // Clear existing timeout
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-
-      // Debounce the section detection - only update after scrolling stops or slows down
-      const VELOCITY_THRESHOLD = 2; // pixels per ms - adjust this value as needed
-      const DEBOUNCE_DELAY =
-        scrollVelocityRef.current > VELOCITY_THRESHOLD ? 150 : 50;
-
-      scrollTimeoutRef.current = setTimeout(() => {
-        // Double-check we're not navigating before updating
-        if (isNavigatingRef.current) {
-          return;
-        }
-
-        const scrollPosition = scrollContainer.scrollTop + 50; // Small offset for better detection
-
-        for (const section of sections) {
-          const el = document.getElementById(section.id);
-          if (el && scrollContainer.contains(el)) {
-            const containerRect = scrollContainer.getBoundingClientRect();
-            const sectionRect = el.getBoundingClientRect();
-
-            // Calculate relative position within the scroll container
-            const relativeTop =
-              sectionRect.top - containerRect.top + scrollContainer.scrollTop;
-            const relativeBottom = relativeTop + el.offsetHeight;
-
-            // Check if section is prominently visible (not just barely touching)
-            const VISIBILITY_THRESHOLD = 0.3; // 30% of section must be visible
-            const visibleHeight =
-              Math.min(
-                relativeBottom,
-                scrollPosition + scrollContainer.clientHeight
-              ) - Math.max(relativeTop, scrollPosition);
-            const visibilityRatio = visibleHeight / el.offsetHeight;
-
-            if (
-              scrollPosition >= relativeTop &&
-              scrollPosition < relativeBottom &&
-              visibilityRatio >= VISIBILITY_THRESHOLD
-            ) {
-              // Only update if it's different from current active section
-              if (activeSection !== section.id) {
-                setActiveSection(section.id);
-                // Update URL hash without triggering hashchange event
-                if (window.location.hash !== `#${section.id}`) {
-                  window.history.replaceState(null, '', `#${section.id}`);
-                }
-              }
-              break;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isNavigatingRef.current) {
+            const id = entry.target.id;
+            if (id !== activeSection) {
+              setActiveSection(id);
+              history.replaceState(null, '', `#${id}`);
             }
           }
-        }
-      }, DEBOUNCE_DELAY);
-    };
+        });
+      },
+      {
+        root: scrollContainer,
+        rootMargin: '0px 0px -70% 0px', // Trigger when section is mostly in view
+        threshold: 0.3,
+      }
+    );
 
-    // Find the scrollable container and add listener
-    const scrollContainer = document.getElementById('scroll-container');
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleScroll);
-      handleScroll(); // Initial call
-    }
+    // Observe each section
+    const elements = sections
+      .map((s) => document.getElementById(s.id))
+      .filter(Boolean) as HTMLElement[];
+
+    elements.forEach((el) => observer.observe(el));
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('scroll', handleScroll);
-      }
-      // Clean up timeout
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
+      observer.disconnect();
     };
   }, [activeSection]); // Add activeSection to dependency array
 
