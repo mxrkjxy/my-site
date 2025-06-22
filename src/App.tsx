@@ -12,7 +12,6 @@ const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
   const [isScrolling, setIsScrolling] = useState(false);
 
-  // 👇 Only update hash if not in a programmatic scroll
   const observedSection = useSectionObserver(sectionIds, isScrolling);
 
   const scrollToSection = (id: string) => {
@@ -20,12 +19,9 @@ const App: React.FC = () => {
     if (el) {
       setIsScrolling(true);
       el.scrollIntoView({ behavior: 'smooth' });
-
-      // Set hash manually
       window.history.pushState(null, '', `#${id}`);
       setActiveSection(id);
 
-      // Unblock after transition
       setTimeout(() => {
         setIsScrolling(false);
       }, 700);

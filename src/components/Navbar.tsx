@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900/95 shadow dark:shadow-md z-10 transition-colors backdrop-blur-sm">
       <div className="w-full h-24 bg-white dark:bg-gray-900 shadow dark:shadow-md">
-        <div className="container h-full mx-auto px-8 py-8 flex items-center justify-between">
+        <div className="md:container h-full mx-auto px-8 py-8 flex items-center justify-between">
           <div className="flex-shrink-0">
             <button
               onClick={() => handleNavigate(navItems[0].id)}
