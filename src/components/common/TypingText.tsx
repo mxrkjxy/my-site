@@ -34,7 +34,7 @@ const TypingText: React.FC<TypingTextProps> = ({ children, speed = 100 }) => {
     ? cloneElement(
         children,
         {
-          ...(children.props as any), // Preserve existing props
+          ...(children.props as any),
           onClick: handleClick,
           style: {
             cursor: 'pointer',

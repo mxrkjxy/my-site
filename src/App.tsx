@@ -34,6 +34,16 @@ const App: React.FC = () => {
     }
   }, [observedSection, isScrolling]);
 
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (sectionIds.includes(hash)) {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'auto' });
+      }
+    }
+  }, []);
+
   return (
     <div className="bg-white text-black dark:bg-gray-900 dark:text-white">
       <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
