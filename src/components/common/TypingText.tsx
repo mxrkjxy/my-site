@@ -23,6 +23,17 @@ const TypingText: React.FC<TypingTextProps> = ({
       ? (children.props as any).children
       : '';
 
+  const className: string = isValidElement(children)
+    ? (children.props as any).className ?? ''
+    : '';
+
+  const allowedPrefixes = ['text-', 'bg-', 'from-', 'to-', 'via-', 'bg-clip-'];
+
+  const inheritedClasses = className
+    .split(' ')
+    .filter((cls) => allowedPrefixes.some((prefix) => cls.startsWith(prefix)))
+    .join(' ');
+
   useEffect(() => {
     if (index < fullText.length) {
       const timeout = setTimeout(() => {
@@ -70,7 +81,7 @@ const TypingText: React.FC<TypingTextProps> = ({
         },
         <>
           {output}
-          <span className="blinking-cursor">_</span>
+          <span className={`blinking-cursor ${inheritedClasses}`}>_</span>
         </>
       )
     : null;
