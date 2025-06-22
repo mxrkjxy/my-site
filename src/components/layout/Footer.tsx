@@ -1,6 +1,6 @@
 import React from 'react';
 
-import navItems from '@/components/config/nav-items';
+import navSections from '@/components/config/nav-sections';
 import Brand from '@/components/common/Brand';
 
 interface FooterProps {
@@ -24,13 +24,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {navItems.map((item) => (
-                <li key={item.id}>
+              {navSections.map(({id, label}) => (
+                <li key={id}>
                   <button
-                    onClick={() => onNavigate(item.id)}
+                    onClick={() => onNavigate(id)}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    {item.label}
+                    {label}
                   </button>
                 </li>
               ))}

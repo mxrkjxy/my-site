@@ -1,6 +1,6 @@
 import { Star, Users } from 'lucide-react';
 
-const ProjectsPage: React.FC = () => {
+const ProjectsSection: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 text-center">
       <h2 className="text-4xl md:text-6xl font-bold mb-12">What People Say</h2>
@@ -50,4 +50,4 @@ const ProjectsPage: React.FC = () => {
   );
 };
 
-export default ProjectsPage;
+export default ProjectsSection;

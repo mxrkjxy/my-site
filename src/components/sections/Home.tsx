@@ -1,6 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 
-const HomePage: React.FC = () => {
+const HomeSection: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -30,4 +30,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default HomeSection;

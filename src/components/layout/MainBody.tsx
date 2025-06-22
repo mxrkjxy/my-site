@@ -1,17 +1,17 @@
 import React from 'react';
 
-import navItems from '@/components/config/nav-items';
+import navSections from '@/components/config/nav-sections';
 
 const MainBody: React.FC = () => {
   return (
     <main className="snap-y snap-mandatory">
-      {navItems.map((item) => (
+      {navSections.map(({id, element, classes}) => (
         <section
-          key={item.id}
-          id={item.id}
-          className={`snap-start min-h-screen pt-24 flex items-center justify-center text-white ${item.classes}`}
+          key={id}
+          id={id}
+          className={`snap-start min-h-screen pt-24 flex items-center justify-center text-white ${classes}`}
         >
-          {item.element}
+          {element}
         </section>
       ))}
     </main>
