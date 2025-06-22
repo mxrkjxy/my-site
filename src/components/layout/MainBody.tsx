@@ -1,6 +1,6 @@
 import React from 'react';
 
-import navItems from '@/components/nav-items';
+import navItems from '@/components/config/nav-items';
 
 const MainBody: React.FC = () => {
   return (

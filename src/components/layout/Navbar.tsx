@@ -1,26 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-import navItems from '@/components/nav-items';
+import navItems from '@/components/config/nav-items';
 import { Button } from '@/components/ui/button';
-import Brand from '@/components/Brand';
-import ThemeToggler from '@/components/ThemeToggler';
+import Brand from '@/components/common/Brand';
+import ThemeToggler from '@/components/common/ThemeToggler';
 
 interface NavbarProps {
   activeSection: string;
   onNavigate: (sectionId: string) => void;
-};
+}
 
 const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   const handleNavigate = (id: string) => {
     onNavigate(id);
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900/95 shadow dark:shadow-md z-10 transition-colors backdrop-blur-sm">
+    <nav
+      ref={menuRef}
+      className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900/95 shadow dark:shadow-md z-10 transition-colors backdrop-blur-sm"
+    >
       <div className="w-full h-24 bg-white dark:bg-gray-900 shadow dark:shadow-md">
         <div className="md:container h-full mx-auto px-8 py-8 flex items-center justify-between">
           <div className="flex-shrink-0">

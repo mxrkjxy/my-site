@@ -12,7 +12,10 @@ const ProjectsPage: React.FC = () => {
             ))}
           </div>
           <p className="text-gray-300 mb-4 italic">
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit autem labore, perspiciatis beatae tenetur fuga illo incidunt mollitia eaque suscipit, et quia esse, iusto vitae. Dicta aliquam doloremque assumenda voluptas!"
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit autem
+            labore, perspiciatis beatae tenetur fuga illo incidunt mollitia
+            eaque suscipit, et quia esse, iusto vitae. Dicta aliquam doloremque
+            assumenda voluptas!"
           </p>
           <div className="flex items-center justify-center">
             <Users className="h-8 w-8 text-blue-400 mr-3" />
@@ -29,7 +32,10 @@ const ProjectsPage: React.FC = () => {
             ))}
           </div>
           <p className="text-gray-300 mb-4 italic">
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, quibusdam perferendis? Fugit, ut eveniet? Pariatur repellendus laborum cum! Repellendus, sit pariatur earum maxime aperiam quasi libero beatae optio? Rem, neque?"
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+            quibusdam perferendis? Fugit, ut eveniet? Pariatur repellendus
+            laborum cum! Repellendus, sit pariatur earum maxime aperiam quasi
+            libero beatae optio? Rem, neque?"
           </p>
           <div className="flex items-center justify-center">
             <Users className="h-8 w-8 text-green-400 mr-3" />

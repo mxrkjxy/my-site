@@ -14,7 +14,10 @@ const HomePage: React.FC = () => {
         </span>
       </h1>
       <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero quia corrupti illum eligendi fuga blanditiis voluptas nam, eum obcaecati dolor accusamus, quos quaerat illo quod consequatur laboriosam. Culpa, enim accusamus.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero quia
+        corrupti illum eligendi fuga blanditiis voluptas nam, eum obcaecati
+        dolor accusamus, quos quaerat illo quod consequatur laboriosam. Culpa,
+        enim accusamus.
       </p>
       <button
         onClick={() => scrollToSection('about')}

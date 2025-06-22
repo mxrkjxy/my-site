@@ -1,7 +1,7 @@
 import React from 'react';
 
-import navItems from '@/components/nav-items';
-import Brand from '@/components/Brand';
+import navItems from '@/components/config/nav-items';
+import Brand from '@/components/common/Brand';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;

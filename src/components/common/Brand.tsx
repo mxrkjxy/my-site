@@ -1,4 +1,4 @@
-import TypingText from '@/components/TypingText';
+import TypingText from '@/components/common/TypingText';
 
 const Brand: React.FC = () => {
   return (
