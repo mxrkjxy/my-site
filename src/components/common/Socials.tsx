@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 
-import { socials } from '@/components/config/contacts';
+import socials from '@/components/config/socials';
 
 interface SocialsProps {
   iconSize?: number;
