@@ -2,7 +2,7 @@ import React from 'react';
 
 import navSections from '@/components/config/nav-sections';
 
-const MainBody: React.FC = () => {
+const MainPage: React.FC = () => {
   return (
     <main className="snap-y snap-mandatory">
       {navSections.map(({id, element, classes}) => (
@@ -18,4 +18,4 @@ const MainBody: React.FC = () => {
   );
 };
 
-export default MainBody;
+export default MainPage;

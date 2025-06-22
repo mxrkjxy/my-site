@@ -4,8 +4,8 @@ import useSectionObserver from '@/hooks/useSectionObserver';
 
 import navSections from '@/components/config/nav-sections';
 import Navbar from '@/components/layout/Navbar';
-import MainBody from '@/components/layout/MainBody';
 import Footer from '@/components/layout/Footer';
+import MainPage from '@/components/pages/Main';
 
 const App: React.FC = () => {
   const sectionIds = navSections.map(({ id }) => id);
@@ -47,7 +47,7 @@ const App: React.FC = () => {
   return (
     <div className="bg-white text-black dark:bg-gray-900 dark:text-white">
       <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
-      <MainBody />
+      <MainPage />
       <Footer onNavigate={scrollToSection} />
     </div>
   );
