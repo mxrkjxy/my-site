@@ -1,9 +1,55 @@
-const Footer: React.FC = () => {
+import React from 'react';
+
+import navItems from '@/components/nav-items';
+import Brand from '@/components/Brand';
+
+interface FooterProps {
+  onNavigate: (sectionId: string) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
-    <footer className="snap-start bg-gray-900 dark:bg-black text-white text-center py-6">
-      <p className="text-sm">
-        &copy; {new Date().getFullYear()} by mxrkjxy. Built with rage :&#41;
-      </p>
+    <footer className="bg-gray-900 dark:bg-black text-white border-t border-gray-800 py-12 snap-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-4 gap-8">
+          <div className="md:col-span-2">
+            <Brand />
+            <p className="text-gray-400 max-w-md">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod,
+              dolores corporis laboriosam natus veniam architecto consequuntur
+              sit! Voluptate harum fugit distinctio, cumque voluptatibus ipsa at
+              odit aut, consequuntur, ullam dolorem.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => onNavigate(item.id)}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Connect</h4>
+            <div className="space-y-2 text-gray-400">
+              <p>follow@mxrkjxy.com</p>
+              <p>(+63) 969-123-4567</p>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>
+            &copy; {new Date().getFullYear()} by mxrkjxy. All rights reserved.
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };

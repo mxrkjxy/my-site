@@ -1,24 +1,21 @@
-import sections from '@/components/sections';
+import React from 'react';
+
+import navItems from '@/components/nav-items';
 
 const MainBody: React.FC = () => {
   return (
-    <main>
-      {sections.map((section, idx) => (
+    <main className="snap-y snap-mandatory">
+      {navItems.map((item) => (
         <section
-          key={section.id}
-          id={section.id}
-          className={`snap-start h-[calc(100vh-theme(height.24))] w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-12 flex flex-col ${
-            idx % 2 === 0
-              ? 'text-left bg-gray-50 dark:bg-gray-950 border-b dark:border-gray-700'
-              : 'text-right bg-gray-20 dark:bg-gray-750 border-b dark:border-gray-500'
-          }`}
+          key={item.id}
+          id={item.id}
+          className={`snap-start min-h-screen pt-24 flex items-center justify-center text-white ${item.classes}`}
         >
-          {section.element}
+          {item.element}
         </section>
       ))}
     </main>
   );
 };
-
 
 export default MainBody;

@@ -1,30 +1,33 @@
-import Content from '@/components/Content';
+import { Zap, Heart, Star } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   return (
-    <Content title="AboutMe">
-      {/* <p className="text-base">
-        I am a software engineer by profession with more than 4 years of
-        experience, primarily focused on front-end web development. My
-        fascination on how websites are built started when I was in grade
-        school, sparking my interest of being a web developer. I simply started
-        building webpages with basic HTML, CSS, and a little bit of Javascript
-        &#40;yes, I hated it. I just wanted to play with styling&#41; I thought
-        it wasn't required too much until I realized it plays a large role in
-        making a website interactive.
-        <br />
-        Fast-forward, when I was in the university, I really enjoyed Javascript
-        among all the programming languages that have been taught to us. I
-        helped in building a registration site for an event we organized as a
-        batch until it continued to our thesis project.
-      </p> */}
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci ab
-        dolor fugiat, tempore obcaecati nam consequatur unde accusantium,
-        molestias nesciunt, reiciendis voluptatem dicta autem sapiente inventore
-        expedita illo! Dicta, inventore!
-      </p>
-    </Content>
+    <div className="max-w-6xl mx-auto px-4 text-center">
+      <h2 className="text-4xl md:text-6xl font-bold mb-8">About Us</h2>
+      <div className="grid md:grid-cols-3 gap-8">
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+          <Zap className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold mb-3">Lightning Fast</h3>
+          <p className="text-gray-300">
+            Built with modern technologies for optimal performance and speed.
+          </p>
+        </div>
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+          <Heart className="h-12 w-12 text-red-400 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold mb-3">User Focused</h3>
+          <p className="text-gray-300">
+            Every design decision is made with user experience in mind.
+          </p>
+        </div>
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
+          <Star className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold mb-3">Premium Quality</h3>
+          <p className="text-gray-300">
+            We deliver nothing but the highest quality solutions.
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
