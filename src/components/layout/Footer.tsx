@@ -2,6 +2,7 @@ import React from 'react';
 
 import navSections from '@/components/config/nav-sections';
 import Brand from '@/components/common/Brand';
+import Contacts from '@/components/common/Contacts';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -24,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {navSections.map(({id, label}) => (
+              {navSections.map(({ id, label }) => (
                 <li key={id}>
                   <button
                     onClick={() => onNavigate(id)}
@@ -36,13 +37,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               ))}
             </ul>
           </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
-            <div className="space-y-2 text-gray-400">
-              <p>follow@mxrkjxy.com</p>
-              <p>(+63) 969-123-4567</p>
-            </div>
-          </div>
+          <Contacts />
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>
