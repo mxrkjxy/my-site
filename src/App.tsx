@@ -35,14 +35,11 @@ const App: React.FC = () => {
   }, [observedSection, isScrolling]);
 
   return (
-    <>
-      <style>{`html { scroll-snap-type: y mandatory; scroll-padding-top: 4rem; }`}</style>
-      <div className="bg-white text-black dark:bg-gray-900 dark:text-white">
-        <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
-        <MainBody />
-        <Footer onNavigate={scrollToSection} />
-      </div>
-    </>
+    <div className="bg-white text-black dark:bg-gray-900 dark:text-white">
+      <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
+      <MainBody />
+      <Footer onNavigate={scrollToSection} />
+    </div>
   );
 };
 
