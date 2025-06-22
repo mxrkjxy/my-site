@@ -8,9 +8,9 @@ interface TypingTextProps {
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 
 const TypingText: React.FC<TypingTextProps> = ({ children, speed = 100 }) => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
-  const [glitchedText, setGlitchedText] = useState('');
+  const [glitchText, setGlitchText] = useState('');
 
   const fullText =
     isValidElement(children) &&
@@ -18,42 +18,44 @@ const TypingText: React.FC<TypingTextProps> = ({ children, speed = 100 }) => {
       ? (children.props as any).children
       : '';
 
+  // Typing effect
   useEffect(() => {
     if (index < fullText.length) {
       const timeout = setTimeout(() => {
-        const newChar = fullText[index];
-        setDisplayedText((prev) => prev + newChar);
+        const nextChar = fullText[index];
+        setTypedText((prev) => prev + nextChar);
         setIndex((prev) => prev + 1);
       }, speed);
       return () => clearTimeout(timeout);
     }
   }, [index, fullText, speed]);
 
+  // Glitch effect after typing
   useEffect(() => {
     if (index >= fullText.length) {
       const interval = setInterval(() => {
-        const glitched = displayedText
+        const glitched = typedText
           .split('')
-          .map((char) => {
-            if (VOWELS.includes(char.toLowerCase()) && Math.random() < 0.3) {
-              return 'x';
-            }
-            return char;
-          })
+          .map((char) =>
+            VOWELS.includes(char.toLowerCase()) && Math.random() < 0.3
+              ? 'x'
+              : char
+          )
           .join('');
-        setGlitchedText(glitched);
+        setGlitchText(glitched);
       }, 200);
       return () => clearInterval(interval);
     }
-  }, [index, displayedText]);
+  }, [index, typedText]);
 
   const handleClick = () => {
-    setDisplayedText('');
-    setGlitchedText('');
+    setTypedText('');
+    setGlitchText('');
     setIndex(0);
   };
 
-  const output = index < fullText.length ? displayedText : glitchedText;
+  const isTyping = index < fullText.length;
+  const output = isTyping ? typedText : glitchText || typedText;
 
   return isValidElement(children)
     ? cloneElement(
