@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import useSectionObserver from '@/hooks/useSectionObserver';
 
-import homeSections from '@/components/config/home-sections';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import HomePage from '@/components/pages/Home';
+import { homeSections } from '@/components/config';
+import { Navbar, Footer } from '@/components/layout';
+import { HomePage } from '@/components/pages';
 
 const App: React.FC = () => {
   const sectionIds = homeSections.map(({ id }) => id);

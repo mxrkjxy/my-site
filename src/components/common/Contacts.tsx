@@ -1,5 +1,5 @@
-import contacts from '@/components/config/contacts';
-import Socials from '@/components/common/Socials';
+import { contacts } from '@/components/config';
+import { Socials } from '@/components/common';
 
 const Contacts = () => {
   return (
@@ -9,10 +9,7 @@ const Contacts = () => {
         <Socials iconSize={20} />
         {contacts.map(({ id, value, href }) => (
           <p key={id}>
-            <a
-              href={href}
-              className="hover:underline"
-            >
+            <a href={href} className="hover:underline">
               {value}
             </a>
           </p>

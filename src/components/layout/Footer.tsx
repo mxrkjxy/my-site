@@ -1,8 +1,7 @@
 import React from 'react';
 
-import homeSections from '@/components/config/home-sections';
-import Brand from '@/components/common/Brand';
-import Contacts from '@/components/common/Contacts';
+import { homeSections } from '@/components/config';
+import { Brand, Contacts } from '@/components/common';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;

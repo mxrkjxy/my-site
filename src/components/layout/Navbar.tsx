@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-import homeSections from '@/components/config/home-sections';
+import { homeSections } from '@/components/config';
+import { Brand, ThemeToggler } from '@/components/common';
 import { Button } from '@/components/ui/button';
-import Brand from '@/components/common/Brand';
-import ThemeToggler from '@/components/common/ThemeToggler';
 
 interface NavbarProps {
   activeSection: string;

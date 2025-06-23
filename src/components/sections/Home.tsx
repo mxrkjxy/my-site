@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import TypingText from '@/components/common/TypingText';
+import { TypingText } from '@/components/common';
 
 const HomeSection: React.FC = () => {
   const scrollToSection = (sectionId: string) => {

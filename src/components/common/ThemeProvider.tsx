@@ -7,18 +7,18 @@ interface Props {
   readonly storageKey?: string;
 }
 
-export function ThemeProvider({
+const ThemeProvider = ({
   children,
   defaultTheme = 'system',
   storageKey = 'vite-ui-theme',
-}: Props) {
-  return (
-    <NextThemesProvider
-      attribute="class"
-      defaultTheme={defaultTheme}
-      storageKey={storageKey}
-    >
-      {children}
-    </NextThemesProvider>
-  );
-}
+}: Props) => (
+  <NextThemesProvider
+    attribute="class"
+    defaultTheme={defaultTheme}
+    storageKey={storageKey}
+  >
+    {children}
+  </NextThemesProvider>
+);
+
+export default ThemeProvider;

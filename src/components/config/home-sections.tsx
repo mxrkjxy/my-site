@@ -1,8 +1,10 @@
-import HomeSection from '@/components/sections/Home';
-import AboutSection from '@/components/sections/About';
-import ExperienceSection from '@/components/sections/Experience';
-import ProjectsSection from '@/components/sections/Projects';
-import ContactSection from '@/components/sections/Contact';
+import {
+  HomeSection,
+  AboutSection,
+  ExperienceSection,
+  ProjectsSection,
+  ContactSection,
+} from '@/components/sections';
 
 interface HomeSections {
   id: string;
