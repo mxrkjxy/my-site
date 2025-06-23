@@ -1,10 +1,10 @@
 import { homeSections } from '@/components/config';
 import { NavButton } from '@/components/common';
 
-type MenuOptionsProps = {
+interface MenuOptionsProps {
   activeSection: string;
   onClick: (id: string) => void;
-};
+}
 
 export const MenuOptions: React.FC<MenuOptionsProps> = ({
   activeSection,

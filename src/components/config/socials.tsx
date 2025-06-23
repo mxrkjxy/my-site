@@ -1,12 +1,14 @@
-type Usernames = {
+interface WithId {
   id: string;
-  username: string;
-};
+}
 
-type Social = {
-  id: string;
+interface Usernames extends WithId {
+  username: string;
+}
+
+interface Social extends WithId {
   href: string;
-};
+}
 
 const usernames: Usernames[] = [
   { id: 'linkedIn', username: 'user' },

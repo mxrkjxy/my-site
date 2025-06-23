@@ -1,13 +1,11 @@
-type Contact = {
+interface Contact {
   id: string;
   value: string;
-};
+}
 
-type ContactWithHref = {
-  id: string;
-  value: string;
+interface ContactWithHref extends Contact {
   href: string;
-};
+}
 
 const contacts: Contact[] = [
   {
