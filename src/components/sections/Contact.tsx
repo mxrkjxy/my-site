@@ -10,11 +10,11 @@ export const ContactSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <h3 className="text-lg font-semibold mb-2">Email</h3>
-            <p className="text-gray-300">hello@mxrkjxy.com</p>
+            <p className="text-gray-300">mxrkjxy@gmail.com</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-2">Phone</h3>
-            <p className="text-gray-300">(+63) 969-123-4567</p>
+            <p className="text-gray-300">(+63) 969-650-5944</p>
           </div>
         </div>
         <button className="mt-8 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">

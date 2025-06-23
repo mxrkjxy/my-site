@@ -10,11 +10,11 @@ interface ContactWithHref extends Contact {
 const contacts: Contact[] = [
   {
     id: 'email',
-    value: 'user@gmail.com',
+    value: 'mxrkjxy@gmail.com',
   },
   {
     id: 'phone',
-    value: '09691234567',
+    value: '09766505944',
   },
 ];
 

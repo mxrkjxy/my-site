@@ -11,10 +11,10 @@ interface Social extends WithId {
 }
 
 const usernames: Usernames[] = [
-  { id: 'linkedIn', username: 'user' },
-  { id: 'github', username: 'user' },
-  { id: 'hackerrank', username: 'user' },
-  { id: 'instagram', username: 'user' },
+  { id: 'linkedIn', username: 'markjaycada' },
+  { id: 'github', username: 'mxrkjxy' },
+  { id: 'hackerrank', username: 'mxrkjxy' },
+  { id: 'instagram', username: 'mxrkjxy' },
 ];
 
 const hrefTemplates: Record<string, (username: string) => string> = {
