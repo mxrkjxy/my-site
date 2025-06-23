@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 import { homeSections } from '@/components/config';
-import { Brand, NavButton, ThemeToggler } from '@/components/common';
+import { Brand, MenuOptions, ThemeToggler } from '@/components/common';
 import { Button } from '@/components/ui/button';
 
 interface NavbarProps {
@@ -57,15 +57,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
             <div className="hidden ml-10 md:flex gap-6">
-              {homeSections.map(({ id, label }) => (
-                <NavButton
-                  key={id}
-                  id={id}
-                  activeSection={activeSection}
-                  label={label}
-                  clickHandler={() => handleNavigate(id)}
-                />
-              ))}
+              <MenuOptions
+                activeSection={activeSection}
+                onClick={handleNavigate}
+              />
               <ThemeToggler />
             </div>
             <div className="md:hidden flex justify-center items-center gap-2">
@@ -86,19 +81,10 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
         {isMenuOpen && (
           <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700 px-4 py-4 flex flex-col gap-4">
-            {homeSections.map(({ id, label }) => (
-              <button
-                key={id}
-                onClick={() => handleNavigate(id)}
-                className={`block px-4 py-2 rounded-md text-base font-medium w-full text-left transition-all duration-300 ${
-                  activeSection === id
-                    ? 'text-teal-600 dark:text-teal-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
+            <MenuOptions
+              activeSection={activeSection}
+              onClick={handleNavigate}
+            />
           </div>
         )}
       </nav>
