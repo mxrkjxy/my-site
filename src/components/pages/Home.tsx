@@ -2,7 +2,7 @@ import React from 'react';
 
 import { homeSections } from '@/components/config';
 
-const HomePage: React.FC = () => {
+export const HomePage: React.FC = () => {
   return (
     <main className="snap-y snap-mandatory">
       {homeSections.map(({ id, element, classes }) => (
@@ -17,5 +17,3 @@ const HomePage: React.FC = () => {
     </main>
   );
 };
-
-export default HomePage;

@@ -2,7 +2,7 @@ import {
   HomeSection,
   AboutSection,
   ExperienceSection,
-  ProjectsSection,
+  ProjectSection,
   ContactSection,
 } from '@/components/sections';
 
@@ -13,7 +13,7 @@ interface HomeSections {
   classes?: string;
 }
 
-const homeSections: HomeSections[] = [
+export const homeSections: HomeSections[] = [
   {
     id: 'home',
     label: 'Home',
@@ -38,7 +38,7 @@ const homeSections: HomeSections[] = [
   {
     id: 'projects',
     label: 'Projects',
-    element: <ProjectsSection />,
+    element: <ProjectSection />,
     classes:
       'bg-gradient-to-br from-orange-900 via-red-900 to-pink-900 dark:from-orange-950 dark:via-red-950 dark:to-pink-950',
   },
@@ -50,5 +50,3 @@ const homeSections: HomeSections[] = [
       'bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 dark:from-indigo-950 dark:via-purple-950 dark:to-pink-950',
   },
 ];
-
-export default homeSections;

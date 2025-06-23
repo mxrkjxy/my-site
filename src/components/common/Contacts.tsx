@@ -1,7 +1,7 @@
 import { contacts } from '@/components/config';
 import { Socials } from '@/components/common';
 
-const Contacts = () => {
+export const Contacts: React.FC = () => {
   return (
     <div>
       <h4 className="text-lg font-semibold mb-4">Let's connect!</h4>
@@ -18,5 +18,3 @@ const Contacts = () => {
     </div>
   );
 };
-
-export default Contacts;

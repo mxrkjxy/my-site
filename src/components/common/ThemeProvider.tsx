@@ -7,7 +7,7 @@ interface Props {
   readonly storageKey?: string;
 }
 
-const ThemeProvider = ({
+export const ThemeProvider = ({
   children,
   defaultTheme = 'system',
   storageKey = 'vite-ui-theme',
@@ -20,5 +20,3 @@ const ThemeProvider = ({
     {children}
   </NextThemesProvider>
 );
-
-export default ThemeProvider;

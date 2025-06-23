@@ -22,9 +22,7 @@ const hrefTemplates: Record<string, (username: string) => string> = {
   instagram: (u) => `https://www.instagram.com/${u}`,
 };
 
-const socials: Social[] = usernames.map(({ id, username }) => ({
+export const socials: Social[] = usernames.map(({ id, username }) => ({
   id,
   href: hrefTemplates[id](username),
 }));
-
-export default socials;

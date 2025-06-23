@@ -10,7 +10,10 @@ interface NavbarProps {
   onNavigate: (sectionId: string) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  activeSection,
+  onNavigate,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
@@ -109,5 +112,3 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
     </header>
   );
 };
-
-export default Navbar;

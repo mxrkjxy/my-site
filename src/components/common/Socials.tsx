@@ -19,7 +19,7 @@ const iconMap: Record<string, IconType> = {
   instagram: FaInstagram,
 };
 
-const Socials: React.FC<SocialsProps> = ({ iconSize }) => {
+export const Socials: React.FC<SocialsProps> = ({ iconSize }) => {
   return (
     <div className="flex gap-3">
       {socials.map(({ id, href }) => {
@@ -35,5 +35,3 @@ const Socials: React.FC<SocialsProps> = ({ iconSize }) => {
     </div>
   );
 };
-
-export default Socials;

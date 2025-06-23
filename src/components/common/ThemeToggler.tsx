@@ -3,9 +3,9 @@ import { useTheme } from 'next-themes';
 
 import { Button } from '@/components/ui/button';
 
-const ThemeToggler: React.FC = () => {
+export const ThemeToggler: React.FC = () => {
   const { theme, setTheme } = useTheme();
-  
+
   return (
     <Button
       variant="ghost"
@@ -20,5 +20,3 @@ const ThemeToggler: React.FC = () => {
     </Button>
   );
 };
-
-export default ThemeToggler;

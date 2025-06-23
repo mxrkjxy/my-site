@@ -27,10 +27,10 @@ const contactHrefMap: Record<string, (value: string) => string> = {
   telegram: (v) => `https://t.me/${v.replace(/^@/, '')}`,
 };
 
-const contactWithHref: ContactWithHref[] = contacts.map(({ id, value }) => ({
-  id,
-  value,
-  href: contactHrefMap[id]?.(value) ?? '#',
-}));
-
-export default contactWithHref;
+export const contactsWithHref: ContactWithHref[] = contacts.map(
+  ({ id, value }) => ({
+    id,
+    value,
+    href: contactHrefMap[id]?.(value) ?? '#',
+  })
+);

@@ -1,4 +1,4 @@
-const ContactSection: React.FC = () => {
+export const ContactSection: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 text-center">
       <h2 className="text-4xl md:text-6xl font-bold mb-8">Get In Touch</h2>
@@ -24,5 +24,3 @@ const ContactSection: React.FC = () => {
     </div>
   );
 };
-
-export default ContactSection;

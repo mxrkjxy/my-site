@@ -7,7 +7,7 @@ interface FooterProps {
   onNavigate: (sectionId: string) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-gray-900 dark:bg-black text-white border-t border-gray-800 py-12 snap-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,5 +47,3 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     </footer>
   );
 };
-
-export default Footer;

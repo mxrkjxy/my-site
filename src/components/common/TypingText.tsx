@@ -8,7 +8,7 @@ interface TypingTextProps {
 
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 
-const TypingText: React.FC<TypingTextProps> = ({
+export const TypingText: React.FC<TypingTextProps> = ({
   children,
   speed = 100,
   hasGlitch = false,
@@ -86,5 +86,3 @@ const TypingText: React.FC<TypingTextProps> = ({
       )
     : null;
 };
-
-export default TypingText;

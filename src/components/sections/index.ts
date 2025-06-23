@@ -1,5 +1,5 @@
-export { default as AboutSection } from './About';
-export { default as ContactSection } from './Contact';
-export { default as ExperienceSection } from './Experience';
-export { default as HomeSection } from './Home';
-export { default as ProjectsSection } from './Projects';
+export * from './About';
+export * from './Contact';
+export * from './Experience';
+export * from './Home';
+export * from './Projects';
