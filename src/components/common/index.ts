@@ -1,5 +1,6 @@
 export * from './Brand';
 export * from './Contacts';
+export * from './NavButton';
 export * from './Socials';
 export * from './ThemeProvider';
 export * from './ThemeToggler';

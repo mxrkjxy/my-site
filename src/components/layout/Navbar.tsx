@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 import { homeSections } from '@/components/config';
-import { Brand, ThemeToggler } from '@/components/common';
+import { Brand, NavButton, ThemeToggler } from '@/components/common';
 import { Button } from '@/components/ui/button';
 
 interface NavbarProps {
@@ -58,20 +58,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
             <div className="hidden ml-10 md:flex gap-6">
               {homeSections.map(({ id, label }) => (
-                <button
+                <NavButton
                   key={id}
-                  onClick={() => handleNavigate(id)}
-                  className={`relative px-2 py-1 font-medium transition-colors duration-300
-                after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full 
-                after:origin-left after:transition-transform after:duration-300 
-                ${
-                  activeSection === id
-                    ? 'text-teal-600 dark:text-teal-400 after:scale-x-100 after:bg-teal-600 dark:after:bg-teal-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-teal-500 dark:hover:text-teal-400 after:scale-x-0 after:bg-teal-400 hover:after:scale-x-100'
-                }`}
-                >
-                  {label}
-                </button>
+                  id={id}
+                  activeSection={activeSection}
+                  label={label}
+                  clickHandler={() => handleNavigate(id)}
+                />
               ))}
               <ThemeToggler />
             </div>
