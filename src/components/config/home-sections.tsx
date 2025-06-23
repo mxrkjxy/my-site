@@ -4,14 +4,14 @@ import ExperienceSection from '@/components/sections/Experience';
 import ProjectsSection from '@/components/sections/Projects';
 import ContactSection from '@/components/sections/Contact';
 
-interface NavSections {
+interface HomeSections {
   id: string;
   label: string;
   element: React.ReactNode;
   classes?: string;
 }
 
-const navSections: NavSections[] = [
+const homeSections: HomeSections[] = [
   {
     id: 'home',
     label: 'Home',
@@ -49,4 +49,4 @@ const navSections: NavSections[] = [
   },
 ];
 
-export default navSections;
+export default homeSections;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import navSections from '@/components/config/nav-sections';
+import homeSections from '@/components/config/home-sections';
 import Brand from '@/components/common/Brand';
 import Contacts from '@/components/common/Contacts';
 
@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {navSections.map(({ id, label }) => (
+              {homeSections.map(({ id, label }) => (
                 <li key={id}>
                   <button
                     onClick={() => onNavigate(id)}

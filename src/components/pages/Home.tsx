@@ -1,11 +1,11 @@
 import React from 'react';
 
-import navSections from '@/components/config/nav-sections';
+import homeSections from '@/components/config/home-sections';
 
 const HomePage: React.FC = () => {
   return (
     <main className="snap-y snap-mandatory">
-      {navSections.map(({id, element, classes}) => (
+      {homeSections.map(({id, element, classes}) => (
         <section
           key={id}
           id={id}

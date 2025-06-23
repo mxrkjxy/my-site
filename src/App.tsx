@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 import useSectionObserver from '@/hooks/useSectionObserver';
 
-import navSections from '@/components/config/nav-sections';
+import homeSections from '@/components/config/home-sections';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import HomePage from '@/components/pages/Home';
 
 const App: React.FC = () => {
-  const sectionIds = navSections.map(({ id }) => id);
+  const sectionIds = homeSections.map(({ id }) => id);
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
   const [isScrolling, setIsScrolling] = useState(false);
 

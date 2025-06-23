@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-import navSections from '@/components/config/nav-sections';
+import homeSections from '@/components/config/home-sections';
 import { Button } from '@/components/ui/button';
 import Brand from '@/components/common/Brand';
 import ThemeToggler from '@/components/common/ThemeToggler';
@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
           <div className="md:container h-full mx-auto px-8 py-8 flex items-center justify-between">
             <div className="flex-shrink-0">
               <button
-                onClick={() => handleNavigate(navSections[0].id)}
+                onClick={() => handleNavigate(homeSections[0].id)}
                 className="cursor-pointer bg-transparent border-none p-0 m-0"
                 type="button"
               >
@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
               </button>
             </div>
             <div className="hidden ml-10 md:flex gap-6">
-              {navSections.map(({ id, label }) => (
+              {homeSections.map(({ id, label }) => (
                 <button
                   key={id}
                   onClick={() => handleNavigate(id)}
@@ -91,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
         </div>
         {isMenuOpen && (
           <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700 px-4 py-4 flex flex-col gap-4">
-            {navSections.map(({ id, label }) => (
+            {homeSections.map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => handleNavigate(id)}
