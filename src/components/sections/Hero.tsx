@@ -1,7 +1,7 @@
 import { ChevronDown } from 'lucide-react';
 import { TypingText } from '@/components/common';
 
-export const HomeSection: React.FC = () => {
+export const HeroSection: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });

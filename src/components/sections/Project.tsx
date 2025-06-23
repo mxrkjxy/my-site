@@ -1,4 +1,4 @@
-export const ExperienceSection: React.FC = () => {
+export const ProjectSection: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto px-4">
       <h2 className="text-4xl md:text-6xl font-bold text-center mb-12">

@@ -1,8 +1,8 @@
 import {
-  HomeSection,
+  HeroSection,
   AboutSection,
-  ExperienceSection,
   ProjectSection,
+  BlogSection,
   ContactSection,
 } from '@/components/sections';
 
@@ -17,28 +17,28 @@ export const homeSections: HomeSections[] = [
   {
     id: 'home',
     label: 'Home',
-    element: <HomeSection />,
+    element: <HeroSection />,
     classes:
       'bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 dark:from-blue-950 dark:via-purple-950 dark:to-indigo-950',
   },
   {
     id: 'about',
-    label: 'About',
+    label: 'Skills',
     element: <AboutSection />,
     classes:
       'bg-gradient-to-br from-purple-900 via-pink-900 to-red-900 dark:from-purple-950 dark:via-pink-950 dark:to-red-950',
   },
   {
-    id: 'experience',
-    label: 'Experience',
-    element: <ExperienceSection />,
+    id: 'projects',
+    label: 'Projects',
+    element: <ProjectSection />,
     classes:
       'bg-gradient-to-br from-green-900 via-teal-900 to-blue-900 dark:from-green-950 dark:via-teal-950 dark:to-blue-950',
   },
   {
-    id: 'projects',
-    label: 'Projects',
-    element: <ProjectSection />,
+    id: 'blog',
+    label: 'Blog',
+    element: <BlogSection />,
     classes:
       'bg-gradient-to-br from-orange-900 via-red-900 to-pink-900 dark:from-orange-950 dark:via-red-950 dark:to-pink-950',
   },
