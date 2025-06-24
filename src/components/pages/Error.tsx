@@ -49,14 +49,14 @@ export const ErrorPage: React.FC = () => {
               <button
                 type="button"
                 onClick={goHome}
-                className="cursor-pointer px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95"
+                className="cursor-pointer px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
               >
                 Go to Homepage
               </button>
               <button
                 type="button"
                 onClick={goBack}
-                className="cursor-pointer px-8 py-3 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-semibold rounded-lg transition-all duration-200 active:scale-95"
+                className="cursor-pointer px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 rounded-full font-semibold hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-300"
               >
                 Go Back
               </button>
