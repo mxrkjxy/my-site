@@ -20,8 +20,8 @@ export default function useSectionObserver(isBlocked: boolean) {
         }
       },
       {
-        rootMargin: '-25% 0px -25% 0px',
-        threshold: [0, 0.1, 0.5, 1],
+        rootMargin: '-35% 0px -35% 0px',
+        threshold: [0.25, 0.5, 0.75],
       }
     );
 
