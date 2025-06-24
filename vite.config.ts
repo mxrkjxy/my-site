@@ -9,6 +9,14 @@ import autoprefixer from 'autoprefixer';
 export default defineConfig({
   base: process.env.VITE_BASE_PATH,
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        fallback: 'index.html',
+      },
+    },
+  },
   css: {
     postcss: {
       plugins: [tailwindcss, autoprefixer],
