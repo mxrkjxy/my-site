@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 
-export default function useSectionObserver(sectionIds: string[], isBlocked: boolean) {
+import { homeSections } from '@/components/config';
+
+export default function useSectionObserver(isBlocked: boolean) {
+  const sectionIds = homeSections.map(({ id }) => id);
   const [activeId, setActiveId] = useState<string>(sectionIds[0]);
 
   useEffect(() => {
@@ -17,7 +20,7 @@ export default function useSectionObserver(sectionIds: string[], isBlocked: bool
         }
       },
       {
-        rootMargin: '-50% 0px -50% 0px',
+        rootMargin: '-25% 0px -25% 0px',
         threshold: [0, 0.1, 0.5, 1],
       }
     );

@@ -1,55 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import useSectionObserver from '@/hooks/useSectionObserver';
+import { BASE_PATH } from '@/config';
+import { RootLayout } from '@/components/layout';
+import { HomePage, ErrorPage, BlogPage } from './components/pages';
 
-import { homeSections } from '@/components/config';
-import { Navbar, Footer } from '@/components/layout';
-import { HomePage } from '@/components/pages';
+const router = createBrowserRouter([
+  {
+    path: BASE_PATH,
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: 'blog',
+        element: <BlogPage />,
+        children: [{}],
+      },
+    ],
+  },
+]);
 
 const App: React.FC = () => {
-  const sectionIds = homeSections.map(({ id }) => id);
-  const [activeSection, setActiveSection] = useState(sectionIds[0]);
-  const [isScrolling, setIsScrolling] = useState(false);
-
-  const observedSection = useSectionObserver(sectionIds, isScrolling);
-
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      setIsScrolling(true);
-      el.scrollIntoView({ behavior: 'smooth' });
-      window.history.pushState(null, '', `#${id}`);
-      setActiveSection(id);
-
-      setTimeout(() => {
-        setIsScrolling(false);
-      }, 700);
-    }
-  };
-
-  useEffect(() => {
-    if (!isScrolling && observedSection !== activeSection) {
-      setActiveSection(observedSection);
-    }
-  }, [observedSection, isScrolling]);
-
-  useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (sectionIds.includes(hash)) {
-      const el = document.getElementById(hash);
-      if (el) {
-        el.scrollIntoView({ behavior: 'auto' });
-      }
-    }
-  }, []);
-
-  return (
-    <div className="bg-white text-black dark:bg-gray-900 dark:text-white">
-      <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
-      <HomePage />
-      <Footer onNavigate={scrollToSection} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

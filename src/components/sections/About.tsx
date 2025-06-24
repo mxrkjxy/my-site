@@ -1,8 +1,6 @@
-import { Zap, Heart, Star } from 'lucide-react';
-
 export const AboutSection: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 text-center">
+    <div className="max-w-4xl mx-auto px-4 py-20 text-center">
       <h2 className="text-5xl font-bold mb-8 text-gray-800 dark:text-white">
         About Me
       </h2>

@@ -6,7 +6,7 @@ interface TypingTextProps {
   hasGlitch?: boolean;
 }
 
-const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+const VOWELS = ['a', 'e', 'i', 'o', 'u', '0'];
 
 export const TypingText: React.FC<TypingTextProps> = ({
   children,

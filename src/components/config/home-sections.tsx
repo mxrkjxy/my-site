@@ -23,7 +23,7 @@ export const homeSections: HomeSections[] = [
   },
   {
     id: 'about',
-    label: 'Skills',
+    label: 'About',
     element: <AboutSection />,
     classes: 'bg-white dark:bg-gray-900',
   },

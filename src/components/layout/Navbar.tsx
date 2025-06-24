@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+import { BASE_PATH } from '@/config';
 import { homeSections } from '@/components/config';
 import { Brand, MenuOptions, ThemeToggler } from '@/components/common';
 import { Button } from '@/components/ui/button';
@@ -16,6 +18,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
+
+  const navigate = useNavigate();
 
   const handleNavigate = (id: string) => {
     onNavigate(id);
@@ -49,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="md:container h-full mx-auto px-8 py-8 flex items-center justify-between">
             <div className="flex-shrink-0">
               <button
-                onClick={() => handleNavigate(homeSections[0].id)}
+                onClick={() => navigate(`${BASE_PATH}#${homeSections[0].id}`)}
                 className="cursor-pointer bg-transparent border-none p-0 m-0"
                 type="button"
               >

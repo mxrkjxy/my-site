@@ -1,4 +1,3 @@
-import { ChevronDown } from 'lucide-react';
 import { TypingText } from '@/components/common';
 
 export const HeroSection: React.FC = () => {
@@ -8,7 +7,7 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className="text-center px-4">
+    <div className="text-center px-4 py-20">
       <TypingText speed={50} hasGlitch>
         <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
           hello!
