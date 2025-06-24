@@ -1,50 +1,84 @@
-import { Star, Users } from 'lucide-react';
+const blogPosts = [
+  {
+    title: 'Building Scalable React Applications',
+    excerpt:
+      'Learn the best practices for creating maintainable and scalable React applications that can grow with your business needs.',
+    date: 'March 15, 2025',
+    readTime: '5 min read',
+    tags: ['React', 'Architecture', 'Best Practices'],
+  },
+  {
+    title: 'The Future of Web Development',
+    excerpt:
+      'Exploring emerging trends and technologies that will shape the future of web development in the next decade.',
+    date: 'March 10, 2025',
+    readTime: '8 min read',
+    tags: ['Web Dev', 'Trends', 'Future'],
+  },
+  {
+    title: 'Mastering TypeScript in 2025',
+    excerpt:
+      'A comprehensive guide to leveraging TypeScript features for better code quality and developer experience.',
+    date: 'March 5, 2025',
+    readTime: '6 min read',
+    tags: ['TypeScript', 'JavaScript', 'Tutorial'],
+  },
+  {
+    title: 'Design Systems That Scale',
+    excerpt:
+      'How to create and maintain design systems that can scale across multiple products and teams effectively.',
+    date: 'February 28, 2025',
+    readTime: '7 min read',
+    tags: ['Design', 'UI/UX', 'Systems'],
+  },
+];
 
 export const BlogSection: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 text-center">
-      <h2 className="text-4xl md:text-6xl font-bold mb-12">What People Say</h2>
+    <div className="max-w-6xl mx-auto px-4 py-20">
+      <h2 className="text-5xl font-bold text-center mb-16 text-gray-800 dark:text-white">
+        Latest Blog Posts
+      </h2>
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-          <div className="flex justify-center mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-            ))}
-          </div>
-          <p className="text-gray-300 mb-4 italic">
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit autem
-            labore, perspiciatis beatae tenetur fuga illo incidunt mollitia
-            eaque suscipit, et quia esse, iusto vitae. Dicta aliquam doloremque
-            assumenda voluptas!"
-          </p>
-          <div className="flex items-center justify-center">
-            <Users className="h-8 w-8 text-blue-400 mr-3" />
-            <div>
-              <p className="font-semibold">Sarah Johnson</p>
-              <p className="text-sm text-gray-400">Product Manager</p>
+        {blogPosts.map((post, index) => (
+          <article
+            key={index}
+            className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 group cursor-pointer"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                {post.date}
+              </span>
+              <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                {post.readTime}
+              </span>
             </div>
-          </div>
-        </div>
-        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-          <div className="flex justify-center mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-            ))}
-          </div>
-          <p className="text-gray-300 mb-4 italic">
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-            quibusdam perferendis? Fugit, ut eveniet? Pariatur repellendus
-            laborum cum! Repellendus, sit pariatur earum maxime aperiam quasi
-            libero beatae optio? Rem, neque?"
-          </p>
-          <div className="flex items-center justify-center">
-            <Users className="h-8 w-8 text-green-400 mr-3" />
-            <div>
-              <p className="font-semibold">Mike Chen</p>
-              <p className="text-sm text-gray-400">Creative Director</p>
+            <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+              {post.title}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+              {post.excerpt}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
-          </div>
-        </div>
+            <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:underline">
+              Read More →
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="text-center mt-12">
+        <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+          View All Posts
+        </button>
       </div>
     </div>
   );

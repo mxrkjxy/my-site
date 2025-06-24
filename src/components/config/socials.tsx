@@ -8,6 +8,7 @@ interface Usernames extends WithId {
 
 interface Social extends WithId {
   href: string;
+  url: string;
 }
 
 const usernames: Usernames[] = [
@@ -24,7 +25,14 @@ const hrefTemplates: Record<string, (username: string) => string> = {
   instagram: (u) => `https://www.instagram.com/${u}`,
 };
 
-export const socials: Social[] = usernames.map(({ id, username }) => ({
-  id,
-  href: hrefTemplates[id](username),
-}));
+const cleanUrl = (fullUrl: string): string =>
+  fullUrl.replace(/^https:\/\/(www\.)?/, '');
+
+export const socials: Social[] = usernames.map(({ id, username }) => {
+  const href = hrefTemplates[id](username);
+  return {
+    id,
+    href,
+    url: cleanUrl(href),
+  };
+});

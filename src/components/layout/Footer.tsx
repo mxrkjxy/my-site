@@ -13,12 +13,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <Brand />
-            <p className="text-gray-400 max-w-md">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod,
-              dolores corporis laboriosam natus veniam architecto consequuntur
-              sit! Voluptate harum fugit distinctio, cumque voluptatibus ipsa at
-              odit aut, consequuntur, ullam dolorem.
+            <h4 className="text-lg font-semibold mb-4">
+              <Brand />
+            </h4>
+            <p className="text-gray-400 leading-relaxed">
+              Creating exceptional digital experiences through code and design.
             </p>
           </div>
           <div>

@@ -9,7 +9,7 @@ export const HomePage: React.FC = () => {
         <section
           key={id}
           id={id}
-          className={`snap-start min-h-screen pt-24 flex items-center justify-center text-white ${classes}`}
+          className={`snap-start min-h-screen flex items-center justify-center ${classes}`}
         >
           {element}
         </section>

@@ -1,25 +1,54 @@
+import { contacts, socials } from '@/components/config';
+import { ContactInfo } from '@/components/common';
+
 export const ContactSection: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 text-center">
-      <h2 className="text-4xl md:text-6xl font-bold mb-8">Get In Touch</h2>
-      <p className="text-xl text-gray-300 mb-12">
-        Ready to create something amazing together? Let's start the
-        conversation.
+      <h2 className="text-5xl font-bold mb-8 text-gray-800 dark:text-white">
+        Let's Work Together
+      </h2>
+      <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+        Have a project in mind? I'd love to hear about it. Let's create
+        something amazing together.
       </p>
-      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-2">Email</h3>
-            <p className="text-gray-300">mxrkjxy@gmail.com</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-2">Phone</h3>
-            <p className="text-gray-300">(+63) 969-650-5944</p>
-          </div>
+      <div className="grid md:grid-cols-2 gap-12">
+        <div className="space-y-6">
+          <ContactInfo
+            icon="📧"
+            title="Email"
+            info={contacts.find((contact) => contact.id === 'email')?.value ?? ""}
+            bgColor="bg-blue-600"
+          />
+          <ContactInfo
+            icon="💼"
+            title="LinkedIn"
+            info={socials.find((social) => social.id === 'linkedIn')?.url ?? ""}
+            bgColor="bg-blue-700"
+          />
+          <ContactInfo
+            icon="🐙"
+            title="GitHub"
+            info={socials.find((social) => social.id === 'github')?.url ?? ""}
+            bgColor="bg-gray-800"
+          />
+          <ContactInfo
+            icon="🐦"
+            title="Twitter"
+            info="@mxrkjxy"
+            bgColor="bg-blue-400"
+          />
         </div>
-        <button className="mt-8 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-          Start Your Project
-        </button>
+        <div className="space-y-4">
+          <button className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+            Send Message
+          </button>
+          <button className="w-full px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300">
+            Schedule a Call
+          </button>
+          <button className="w-full px-8 py-4 border-2 border-green-500 text-green-600 dark:text-green-400 rounded-full font-semibold hover:bg-green-50 dark:hover:bg-green-900 transition-all duration-300">
+            Download Resume
+          </button>
+        </div>
       </div>
     </div>
   );

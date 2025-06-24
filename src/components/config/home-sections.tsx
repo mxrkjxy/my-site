@@ -19,34 +19,31 @@ export const homeSections: HomeSections[] = [
     label: 'Home',
     element: <HeroSection />,
     classes:
-      'bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 dark:from-blue-950 dark:via-purple-950 dark:to-indigo-950',
+      'bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800',
   },
   {
     id: 'about',
     label: 'Skills',
     element: <AboutSection />,
-    classes:
-      'bg-gradient-to-br from-purple-900 via-pink-900 to-red-900 dark:from-purple-950 dark:via-pink-950 dark:to-red-950',
+    classes: 'bg-white dark:bg-gray-900',
   },
   {
     id: 'projects',
     label: 'Projects',
     element: <ProjectSection />,
-    classes:
-      'bg-gradient-to-br from-green-900 via-teal-900 to-blue-900 dark:from-green-950 dark:via-teal-950 dark:to-blue-950',
+    classes: 'bg-gray-50 dark:bg-gray-800',
   },
   {
     id: 'blog',
     label: 'Blog',
     element: <BlogSection />,
-    classes:
-      'bg-gradient-to-br from-orange-900 via-red-900 to-pink-900 dark:from-orange-950 dark:via-red-950 dark:to-pink-950',
+    classes: 'bg-white dark:bg-gray-900',
   },
   {
     id: 'contact',
     label: 'Contact',
     element: <ContactSection />,
     classes:
-      'bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 dark:from-indigo-950 dark:via-purple-950 dark:to-pink-950',
+      'bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900',
   },
 ];

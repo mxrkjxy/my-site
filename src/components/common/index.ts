@@ -1,5 +1,6 @@
 export * from './Brand';
 export * from './Contacts';
+export * from './ContactInfo';
 export * from './Menu';
 export * from './NavButton';
 export * from './Socials';

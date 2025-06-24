@@ -43,9 +43,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header>
       <nav
         ref={menuRef}
-        className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900/95 shadow dark:shadow-md transition-colors backdrop-blur-sm"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg"
       >
-        <div className="w-full h-24 bg-white dark:bg-gray-900 shadow dark:shadow-md">
+        <div className="w-full h-24 shadow dark:shadow-md">
           <div className="md:container h-full mx-auto px-8 py-8 flex items-center justify-between">
             <div className="flex-shrink-0">
               <button
@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700 px-4 py-4 flex flex-col gap-4">
+          <div className="md:hidden bg-white/20 dark:bg-gray-900/20 border-t dark:border-gray-700 px-4 py-4 flex flex-col gap-4">
             <MenuOptions
               activeSection={activeSection}
               onClick={handleNavigate}
