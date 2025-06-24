@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import blogPosts from '@/contents/blogPosts';
 
@@ -41,7 +41,7 @@ export const BlogSection: React.FC = () => {
               ))}
             </div>
             <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:underline">
-              Read More →
+              <NavLink to="blog">Read More →</NavLink>
             </div>
           </article>
         ))}
